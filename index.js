@@ -47,8 +47,8 @@ Buildkite.prototype = {
     return this._request('GET', 'organizations')
   },
 
-  getOrg: function (slug) {
-    return this._request('GET', slug)
+  getOrg: function (org) {
+    return this._request('GET', org)
   },
 
   // Pipelines

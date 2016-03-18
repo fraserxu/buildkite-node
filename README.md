@@ -14,7 +14,7 @@ Please check [buidkite api documnetaion](https://buildkite.com/docs/api) for mor
 ```JavaScript
 var Buildkite = require('buildkite-node')
 
-var buildkite = new Buildkite('api-token')
+// var buildkite = new Buildkite('api-token')
 var buildkite = new Buildkite({
   accessToken: 'api-token',
   apiUrl: 'https://api.buildkite.com/v2/' // default
@@ -25,21 +25,16 @@ buildkite.ping().then(function (res) {
 }).catch(function (err) {
   console.log('err', err)
 })
-
-buildkite.user().then(function (res) {
-  console.log('user', res.body)
-}).catch(function (err) {
-  console.log('err', err)
-})
-
-buildkite.listOrgs().then(function (res) {
-  console.log('list orgs', res.body)
-}).catch(function (err) {
-  console.log('err', err)
-})
 ```
 
 ### APIs
+
+To create a new instance `var buildkite = new Buildkite(opts)`
+
+* `opts` - String accessToken
+* `opts` - Object
+  - accessToken
+  - apiUrl, default to 'https://api.buildkite.com/v2/'
 
 #### Overview
 
@@ -51,13 +46,13 @@ user()
 
 listOrgs()
 
-getOrg()
+getOrg(org)
 
 #### Pipelines
 
-listPipelines()
+listPipelines(org)
 
-getPipeline()
+getPipeline(org, pipeline)
 
 createPipeline()
 
@@ -67,11 +62,11 @@ deletePipelline()
 
 listBuilds()
 
-listOrgBuilds()
+listOrgBuilds(org)
 
-listPipelineBuilds()
+listPipelineBuilds(org, pipeline)
 
-getBuild()
+getBuild(org, pipeline, build)
 
 createBuild()
 
@@ -107,7 +102,7 @@ downloadArtifacts()
 
 #### Emojis
 
-listEmojis()
+listEmojis(org)
 
 ### License
 MIT
