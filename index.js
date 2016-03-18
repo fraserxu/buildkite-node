@@ -62,43 +62,43 @@ Buildkite.prototype = {
     return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline)
   },
 
-  createPipeline: function () {
-
+  createPipeline: function (org, opts) {
+    return this._request('POST', 'organizations/' + org + '/pipelines', opts)
   },
 
-  deletePipelline: function () {
-
+  deletePipelline: function (org, pipeline) {
+    return this._request('DELETE', 'organizations/' + org + '/pipelines/' + pipeline)
   },
 
   // Builds
   // ====
 
-  listBuilds: function () {
-    return this._request('GET', 'builds')
+  listBuilds: function (opts) {
+    return this._request('GET', 'builds', opts)
   },
 
-  listOrgBuilds: function (org) {
-    return this._request('GET', 'organizations/' + org + '/builds')
+  listOrgBuilds: function (org, opts) {
+    return this._request('GET', 'organizations/' + org + '/builds', opts)
   },
 
-  listPipelineBuilds: function (org, pipeline) {
-    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds')
+  listPipelineBuilds: function (org, pipeline, opts) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds', opts)
   },
 
   getBuild: function (org, pipeline, build) {
     return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build)
   },
 
-  createBuild: function () {
-
+  createBuild: function (org, pipleline) {
+    return this._request('POST', 'organizations/' + org + '/pipelines/' + pipeline + '/builds')
   },
 
-  cancelBuild: function () {
-
+  cancelBuild: function (org, pipeline, build, opts) {
+    return this._request('PUT', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/cancel', opts)
   },
 
-  rebuildBuild: function () {
-
+  rebuildBuild: function (org, pipeline, build, opts) {
+    return this._request('PUT', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/rebuild', opts)
   },
 
   // Jobs

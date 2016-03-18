@@ -54,9 +54,9 @@ listPipelines(org)
 
 getPipeline(org, pipeline)
 
-createPipeline()
+createPipeline(org, opts)
 
-deletePipelline()
+deletePipelline(org, pipeline)
 
 #### Builds
 
