@@ -76,29 +76,29 @@ rebuildBuild()
 
 #### Jobs
 
-unblockJob()
+unblockJob(org, pipeline, build, job)
 
-getJobLog()
+getJobLog(org, pipeline, build, job)
+
+getJobEnv(org, pipeline, build, job)
 
 #### Agents
 
-listAgents()
+listAgents(org)
 
-getAgent()
+getAgent(org, agent)
 
-stopAgent()
+stopAgent(org, agent)
 
 #### Artifacts
 
-listArtifacts()
+listBuildArtifacts(org, pipeline, build)
 
-getJobArtifacts()
+getJobArtifacts(org, pipeline, build, job)
 
-getBuildArtifacts()
+getArtifact(org, pipeline, build, artifact)
 
-getArtifacts()
-
-downloadArtifacts()
+downloadArtifact(org, pipeline, build, artifact)
 
 #### Emojis
 

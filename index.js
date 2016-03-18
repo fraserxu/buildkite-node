@@ -104,50 +104,50 @@ Buildkite.prototype = {
   // Jobs
   // ====
 
-  unblockJob: function () {
-
+  unblockJob: function (org, pipeline, build, job) {
+    return this._request('PUT', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/unblock')
   },
 
-  getJobLog: function () {
+  getJobLog: function (org, pipeline, build, job) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/log')
+  },
 
+  getJobENv: function (org, pipeline, build, job) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/env')
   },
 
   // Agents
   // ====
 
-  listAgents: function () {
-
+  listAgents: function (org) {
+    return this._request('GET', 'organizations/' + org + '/agents')
   },
 
-  getAgent: function () {
-
+  getAgent: function (org, agent) {
+    return this._request('GET', 'organizations/' + org + '/agents/' + agent)
   },
 
-  stopAgent: function () {
-
+  stopAgent: function (org, agent) {
+    return this._request('PUT', 'organizations/' + org + '/agents/' + agent + '/stop')
   },
 
   // Artifacts
   // ====
 
-  listArtifacts: function () {
-
+  listBuildArtifacts: function (org, pipeline, build) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/artifacts')
   },
 
-  getJobArtifacts: function () {
-
+  getJobArtifacts: function (org, pipeline, build, job) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/artifacts')
   },
 
-  getBuildArtifacts: function () {
-
+  getArtifact: function (org, pipeline, build, artifact) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/artifacts/' + artifact)
   },
 
-  getArtifacts: function () {
-
-  },
-
-  downloadArtifacts: function () {
-
+  downloadArtifact: function (org, pipeline, build, artifact) {
+    return this._request('GET', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/artifacts/' + artifact + '/download')
   },
 
   // Emojis
