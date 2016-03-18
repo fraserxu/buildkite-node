@@ -1,0 +1,28 @@
+{
+  "name": "buildkite-node",
+  "version": "1.0.0",
+  "description": "A buildkite nodejs sdk",
+  "main": "index.js",
+  "dependencies": {
+    "got": "^6.2.0",
+    "object-assign": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraserxu/buildkite-node.git"
+  },
+  "keywords": [
+    "buildkite",
+    "sdk"
+  ],
+  "author": "Fraser Xu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fraserxu/buildkite-node/issues"
+  },
+  "homepage": "https://github.com/fraserxu/buildkite-node#readme"
+}
