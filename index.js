@@ -19,7 +19,7 @@ Buildkite.prototype = {
     opts = opts || {}
     var url = endpoint.indexOf('//') >= 0 ? endpoint : this.apiUrl + endpoint
     var params = objectAssign({
-      accessToken: this.accessToken
+      access_token: this.accessToken
     }, opts)
 
     return got(url + '?' + qs.stringify(params), {
