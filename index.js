@@ -103,6 +103,10 @@ Buildkite.prototype = {
 
   // Jobs
   // ====
+  
+  retryJob: function(org, pipeline, build, job) {
+    return this._request('PUT', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/retry')
+  },
 
   unblockJob: function (org, pipeline, build, job) {
     return this._request('PUT', 'organizations/' + org + '/pipelines/' + pipeline + '/builds/' + build + '/jobs/' + job + '/unblock')
