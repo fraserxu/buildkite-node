@@ -76,6 +76,8 @@ rebuildBuild()
 
 #### Jobs
 
+retryJob(org, pipeline, build, job)
+
 unblockJob(org, pipeline, build, job)
 
 getJobLog(org, pipeline, build, job)
